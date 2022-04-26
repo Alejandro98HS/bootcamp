@@ -12,9 +12,9 @@ spring:
           enabled: true
       routes:
         # nombre de nuestro route
-        - id: nttdatacenters-spring-t5-AHS
+        - id: nttdatacentersspringt5AHS
           # uri lo redirijimos a nuestros service costumer service (nombre que esta registrado eureka server)
-          uri: lb://nttdatacenters-spring-t5-AHS
+          uri: lb://nttdatacentersspringt5AHS
           #filtro que va a aplicar al path de la llamada de nuestros microservicios (todo lo que lleva costumers)
           predicates:
             - Path=/api/**

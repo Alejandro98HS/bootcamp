@@ -1,0 +1,20 @@
+server:
+  port: 8083
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8082/eureka/
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        # nombre de nuestro route
+        - id: nttdatacenters-spring-t5-AHS
+          # uri lo redirijimos a nuestros service costumer service (nombre que esta registrado eureka server)
+          uri: lb://nttdatacenters-spring-t5-AHS
+          #filtro que va a aplicar al path de la llamada de nuestros microservicios (todo lo que lleva costumers)
+          predicates:
+            - Path=/api/**
